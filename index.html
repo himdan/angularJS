@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+<head>
+    <title>Hello Youtube</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    
+    <script type="text/javascript" src="js/controllers/VideoListController.js"></script>
+    <script type="text/javascript" src="js/factories/video.js"></script>
+    <script type="text/javascript" src="js/directives/yt-video.js"></script>
+    <script type="text/javascript" src="js/services/youtube.js"></script>
+    
+    
+    
+    <script id="Youtube_Js_API"></script>
+</head>
+<body ng-app="starter" ng-controller="videos">
+
+    <h2>Search Video</h2>
+    <div class="search-container">
+        <label for="search-terme">
+            search:<input type="text" placeholder="search" ng-model="term" />
+        </label>
+        <button ng-click="load()">load</button>
+    </div>
+    <div ng-if="collection.videos.length">
+    <div ng-repeat="video in collection.videos" yt-video video="video" ng-style="height_style">
+    
+    </div>
+    
+    
+</body>
+</html>
